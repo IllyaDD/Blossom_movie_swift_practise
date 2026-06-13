@@ -17,6 +17,11 @@ struct Constants{
     static let trendingTVString = "Trending TV"
     static let topRatedMovieString = "Top Rated Movies"
     static let topRatedTVString = "Top Rated TV"
+    static let movieSearchString = "Movie Search"
+    static let tvSearchString = "TV Search"
+    static let moviePlacHolderString = "Search for a movie"
+    static let tvPlacHolderString = "Search for a TV show"
+
     
     static let playString = "Play"
     
@@ -24,6 +29,9 @@ struct Constants{
     static let upcomingIconString = "play.circle"
     static let searchIconString = "magnifyingglass"
     static let downloadIconString = "arrow.down.to.line"
+    static let tvIconString = "tv"
+    static let movieIconString = "movieclapper"
+
     
     static let testTittleUrl = "https://image.tmdb.org/t/p/w500/mjkS2iAgWj3ik1DTjvI15nHZ7yl.jpg"
     static let testTittleUrl2 = "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg"
@@ -62,3 +70,17 @@ extension Text{
             }
         }
     }
+
+extension Text{
+        func errorMessage() -> some View{
+            self
+                .foregroundStyle(.red)
+                .padding()
+                .background(.ultraThinMaterial)
+                .clipShape(.rect(cornerRadius: 10))
+
+            }
+        }
+
+
+    

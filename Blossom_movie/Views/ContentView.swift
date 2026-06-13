@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var viewModel = ViewModel()
+    
     var body: some View {
         TabView{
             Tab(Constants.homeString, systemImage: Constants.homeIconString){
-                HomeView()
+                HomeView(viewModel: viewModel)
             }
             Tab(Constants.upcomingString, systemImage: Constants.upcomingIconString){
-                UpcomigView()
+                UpcomigView(viewModel: viewModel)
                 
             }
             Tab(Constants.searchString, systemImage: Constants.searchIconString){
-                Text(Constants.searchString)
+                SearchView()
                 
             }
             Tab(Constants.downloadString, systemImage: Constants.downloadIconString){
-                Text(Constants.downloadString)
-                
+                    DownloadView()
                 }
             }
         }

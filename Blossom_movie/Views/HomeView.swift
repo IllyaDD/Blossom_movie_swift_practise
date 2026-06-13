@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
-    let viewModel = ViewModel()
+    let viewModel: ViewModel
     @State private var titleDeailPath = NavigationPath()
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         NavigationStack(path: $titleDeailPath) {
@@ -47,7 +49,8 @@ struct HomeView: View {
                                 }
                                 
                                 Button{
-                                    
+                                    modelContext.insert(viewModel.heroTiitle)
+                                    try? modelContext.save()
                                 }label: {
                                     Text(Constants.downloadString)
                                         .ghostButton()
@@ -59,14 +62,17 @@ struct HomeView: View {
                             HorizontallListView(header: Constants.trendingTVString, titles: viewModel.trendingTV)
                             {title in titleDeailPath.append(title)}
                             
-                            HorizontallListView(header: Constants.topRatedMovieString, titles: viewModel.topRatedTV)
+                            HorizontallListView(header: Constants.topRatedMovieString, titles: viewModel.topRatedMovies)
                             {title in titleDeailPath.append(title)}
                             
                             HorizontallListView(header: Constants.topRatedTVString, titles: viewModel.topRatedTV)
                             {title in titleDeailPath.append(title)}
                         }
                     case .failed(let error):
-                        Text(verbatim: "Error: \(error)")
+                        Text(error.localizedDescription)
+                            .errorMessage()
+                            .frame(width: geo.size.width, height: geo.size.height)
+
                     }
                 }
                 .task {
@@ -81,5 +87,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(viewModel: ViewModel())
 }

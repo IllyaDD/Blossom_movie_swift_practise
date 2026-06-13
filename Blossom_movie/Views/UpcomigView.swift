@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomigView: View {
-    let viewModel = ViewModel()
+    let viewModel: ViewModel
     var body: some View {
         NavigationStack {
             GeometryReader{ geo in
@@ -19,9 +19,12 @@ struct UpcomigView: View {
                     ProgressView()
                         .frame(width: geo.size.width, height: geo.size.height)
                 case .success:
-                    VerticalListView(titles: viewModel.upcomingMovies)
+                    VerticalListView(titles: viewModel.upcomingMovies, canDelete: false)
                 case .failed(let underlyingError):
                     Text(underlyingError.localizedDescription)
+                        .errorMessage()
+                        .frame(width: geo.size.width, height: geo.size.height)
+
                 }
             }
             .task {
@@ -32,5 +35,5 @@ struct UpcomigView: View {
 }
 
 #Preview {
-    UpcomigView()
+    UpcomigView(viewModel: ViewModel())
 }
