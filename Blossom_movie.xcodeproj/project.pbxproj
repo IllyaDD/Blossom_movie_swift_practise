@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8F28EC772FDC27CE004B3326 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F28EC762FDC27CE004B3326 /* YouTubePlayerKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8F85AEFF2FB2D8EB00BFE88C /* Blossom_movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blossom_movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F28EC772FDC27CE004B3326 /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = Blossom_movie;
 			packageProductDependencies = (
+				8F28EC762FDC27CE004B3326 /* YouTubePlayerKit */,
 			);
 			productName = Blossom_movie;
 			productReference = 8F85AEFF2FB2D8EB00BFE88C /* Blossom_movie.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 8F85AEF62FB2D8EB00BFE88C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8F28EC752FDC27CE004B3326 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8F85AF002FB2D8EB00BFE88C /* Products */;
 			projectDirPath = "";
@@ -332,6 +341,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F28EC752FDC27CE004B3326 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F28EC762FDC27CE004B3326 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F28EC752FDC27CE004B3326 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F85AEF72FB2D8EB00BFE88C /* Project object */;
 }

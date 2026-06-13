@@ -5,24 +5,30 @@
 //  Created by Illya Donchenko on 07.06.2026.
 //
 
-import WebKit
 import SwiftUI
+import YouTubePlayerKit
 
 
-struct YoutubePlayer: UIViewRepresentable {
-    let webView = WKWebView()
+struct YoutubePlayer: View {
     let videoID: String
-    let youtubeBaseURL = APIConfig.shared?.youtubeBaseURL
 
-    func makeUIView(context: Context) -> some UIView {
-        webView
+    var body: some View {
+        YouTubePlayerView(
+            YouTubePlayer(
+                source: .video(id: videoID),
+                configuration: .init(
+                    allowsInlineMediaPlayback: true
+                )
+            )
+        ) { state in
+            switch state {
+            case .idle:
+                ProgressView()
+            case .ready:
+                EmptyView()
+            case .error(let error):
+                Text(verbatim: "Error: \(error)")
+            }
+        }
     }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        guard let baseUrlString = youtubeBaseURL,
-              let baseURL = URL(string: baseUrlString) else {return}
-        let fullURL = baseURL.appending(path: videoID)
-        webView.load(URLRequest(url: fullURL))
-    }
-
 }

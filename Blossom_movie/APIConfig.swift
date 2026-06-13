@@ -34,8 +34,6 @@ struct APIConfig: Decodable{
             
         }catch{
             throw APIConfigError.decodingFailed(underlyingError: error)
-        }catch{
-            throw APIConfigError.dataLoadingFailed(underlyingError: error)
         }
     }
 }

@@ -25,8 +25,39 @@ struct DataFetcher{
         }
 
         print(fetchTitlesURL)
-
-        let (data,urlResponse) = try await URLSession.shared.data(from: fetchTitlesURL)
+        var titles = try await fetchAndDecode(url: fetchTitlesURL, type: TMDBAPIObject.self).results
+        
+        Constants.addPosterPath(to: &titles)
+        return titles
+    }
+    
+    
+    
+    
+    func fetchVideoID(for title: String) async throws -> String{
+        guard let baseSearchURL = youtubeSearchURL else{
+            throw NetworkError.missConfig
+        }
+        guard let searchAPIkey = youtubeAPIKey else{
+            throw NetworkError.missConfig
+        }
+        
+        let trailerSearch = title + YoutubeURLString.space.rawValue + YoutubeURLString.trailer.rawValue
+        
+        
+        guard let fetchVideoURL = URL(string: baseSearchURL)?.appending(queryItems: [
+            URLQueryItem(name: YoutubeURLString.queryShorten.rawValue, value: trailerSearch),
+            URLQueryItem(name: YoutubeURLString.key.rawValue, value: searchAPIkey)
+        ])else{
+            throw NetworkError.urlBuildFailed
+        }
+        print(fetchVideoURL)
+        
+        return try await fetchAndDecode(url: fetchVideoURL, type: YoutubeSearchResponse.self).items?.first?.id?.videoId ?? ""
+    }
+    
+    func fetchAndDecode<T: Decodable>(url: URL, type: T.Type) async throws -> T{
+        let (data,urlResponse) = try await URLSession.shared.data(from: url)
 
         guard let response = urlResponse as? HTTPURLResponse, response.statusCode == 200 else{
             throw NetworkError.badURLResponse(underlyingError: NSError(
@@ -37,9 +68,7 @@ struct DataFetcher{
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        var titles = try decoder.decode(APIObject.self, from: data).results
-        Constants.addPosterPath(to: &titles)
-        return titles
+        return  try decoder.decode(type, from: data)
     }
 
     private func buildURL(media:String, type:String) throws -> URL?{
@@ -53,9 +82,9 @@ struct DataFetcher{
         var path:String
 
         if type == "trending"{
-            path = "3/trending/\(media)/day"
-        } else if type == "top_rated"{
-            path = "3/\(media)/top_rated"
+            path = "3/\(type)/\(media)/day"
+        } else if type == "top_rated" || type == "upcoming"{
+            path = "3/\(media)/\(type)"
         } else{
             throw NetworkError.urlBuildFailed
         }

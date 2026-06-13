@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "84B1F42F-EB6E-49DE-9C5D-ACA05C625873"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C675C488-71A9-4BEF-9217-46C22B2C27FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blossom_movie/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B724FDDA-CA04-4FB9-872E-89AA8B0E8AF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blossom_movie/DataFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "fetchVideoID(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B724FDDA-CA04-4FB9-872E-89AA8B0E8AF4 - 73159293068f8600"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Blossom_movie.DataFetcher.fetchVideoID(for: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/DataFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+               <Location
+                  uuid = "B724FDDA-CA04-4FB9-872E-89AA8B0E8AF4 - 327430a5291e272"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Blossom_movie.DataFetcher.fetchVideoID(for: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/DataFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+               <Location
+                  uuid = "B724FDDA-CA04-4FB9-872E-89AA8B0E8AF4 - 70e74dbf2b514a02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Blossom_movie.DataFetcher.fetchVideoID(for: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/DataFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+               <Location
+                  uuid = "B724FDDA-CA04-4FB9-872E-89AA8B0E8AF4 - f15992293e45ac03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Blossom_movie.DataFetcher.fetchVideoID(for: Swift.String) async throws -&gt; Swift.String"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/DataFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "145E2842-3308-4B40-B7D4-D7F722D97D01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blossom_movie/Title.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "TMDBAPIObject"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "145E2842-3308-4B40-B7D4-D7F722D97D01 - 19262c3dec125b75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blossom_movie.TMDBAPIObject.init() -&gt; Blossom_movie.TMDBAPIObject"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/Title.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11">
+               </Location>
+               <Location
+                  uuid = "145E2842-3308-4B40-B7D4-D7F722D97D01 - 101fe486c090d807"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Blossom_movie.TMDBAPIObject.init(from: Swift.Decoder) throws -&gt; Blossom_movie.TMDBAPIObject"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/Title.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11">
+               </Location>
+               <Location
+                  uuid = "145E2842-3308-4B40-B7D4-D7F722D97D01 - e3125588b44f9ede"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of Blossom_movie.TMDBAPIObject.init(results: Swift.Array&lt;Blossom_movie.Title&gt;) -&gt; Blossom_movie.TMDBAPIObject"
+                  moduleName = "Blossom_movie.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/illyadd/Prods/Blossom_movie/Blossom_movie/Title.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
